@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# solve 스크립트
+
+# 입력 인자가 정확한지 확인
+if [ "$#" -ne 2 ]; then
+    echo "사용법: solve {문제번호} {테스트 개수}"
+    exit 1
+fi
+
+num=$1
+tnum=$2
+
+# C++ 파일 컴파일
+g++ "${num}.cpp" -o a.out
+
+# 컴파일이 성공했는지 확인
+if [ $? -ne 0 ]; then
+    echo "컴파일 오류가 발생했습니다."
+    exit 1
+fi
+
+# 각 테스트 케이스 실행
+for ((i = 1; i <= tnum; i++)); do
+    echo "테스트 케이스 $i 실행 중..."
+    ./a.out < "test$i.txt"
+done
+echo ""
