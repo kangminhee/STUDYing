@@ -7,5 +7,5 @@ int main() {
     cin >> a >> b >> c >> t;
 
     if (t <= 30) cout << a;
-    else cout << a + ceil(1.0*(t-30)/b)*c;
+    else cout << a + (int)ceil(1.0*(t-30)/b)*c;
 }
