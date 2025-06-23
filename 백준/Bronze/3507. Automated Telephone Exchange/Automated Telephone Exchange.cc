@@ -1,0 +1,7 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int n; cin >> n;
+    if (n>198) cout << 0;
+    else cout << 99-(n-99)+1;
+}
